@@ -23,3 +23,29 @@ def vertex_1(a, b, c):
     x = -b / (2 * a)
     y = a * x * x + b * x + c
     return x, y
+def main():
+    print("Quadratic Equation Solver")
+    print("This program solves for equations in the form ax^2 + bx + c = 0.")
+    try:
+        a = float(input("Enter a: "))
+        if a == 0:
+            print("This is not a quadratic equation because a cannot be 0")
+            return
+        b = float(input("Enter b: "))
+        c = float(input("Enter c: "))
+        discriminant = discriminant_1(a, b, c)
+        root1, root2 = roots_1(a, b, c)
+        vertex_x, vertex_y = vertex_1(a, b, c)
+        print()
+        print("Results:")
+        print("Discriminant:", discriminant)
+        if discriminant > 0:
+            print("There are two real roots.")
+        elif discriminant == 0:
+            print("There is one repeated real root.")
+        else:
+            print("There are two complex roots.")
+        print("Root 1:", root1)
+        print("Root 2:", root2)
+        print("Vertex:", "(", vertex_x, ",", vertex_y, ")")
+main()
