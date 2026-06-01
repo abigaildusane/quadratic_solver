@@ -1,0 +1,25 @@
+import math
+
+def discriminant_1(a, b, c):
+    return b * b - 4 * a * c
+
+def roots_1(a, b, c):
+    d = discriminant_1(a, b, c)
+    if d > 0:
+        root1 = (-b + math.sqrt(d)) / (2 * a)
+        root2 = (-b - math.sqrt(d)) / (2 * a)
+        return root1, root2
+    elif d == 0:
+        root = -b / (2 * a)
+        return root, root
+    else:
+        real_part = -b / (2 * a)
+        imaginary_part = math.sqrt(-d) / (2 * abs(a))
+        root1 = complex(real_part, imaginary_part)
+        root2 = complex(real_part, -imaginary_part)
+        return root1, root2
+
+def vertex_1(a, b, c):
+    x = -b / (2 * a)
+    y = a * x * x + b * x + c
+    return x, y
