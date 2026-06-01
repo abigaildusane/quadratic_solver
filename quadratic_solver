@@ -48,4 +48,6 @@ def main():
         print("Root 1:", root1)
         print("Root 2:", root2)
         print("Vertex:", "(", vertex_x, ",", vertex_y, ")")
+    except ValueError:
+        print("Please enter numbers only.")
 main()
